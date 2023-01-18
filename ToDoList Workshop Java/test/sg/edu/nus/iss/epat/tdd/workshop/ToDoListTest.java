@@ -35,6 +35,13 @@ public class ToDoListTest extends TestCase {
    }
 
    @Test
+   public void testIsEmpty() {
+	   todolist.addTask(task);
+	   todolist.removeTask(task.getDescription());
+	      assertTrue(todolist.getAllTasks().isEmpty());
+   }   
+   
+   @Test
    public void testGetStatus() {
       fail("Not implemented yet");
    }
