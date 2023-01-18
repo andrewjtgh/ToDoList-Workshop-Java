@@ -8,7 +8,9 @@ import junit.framework.TestCase;
 
 public class ToDoListTest extends TestCase {
    // Define Test Fixtures
-
+	private ToDoList todolist;
+	private Task task;
+	
    public ToDoListTest() {
       super();
    }
@@ -16,16 +18,20 @@ public class ToDoListTest extends TestCase {
    @Before
    public void setUp() throws Exception {
       // Initialise Test Fixtures
+	   todolist = new ToDoList();
+	   task = new Task("Desc 1");
+
    }
 
    @After
    public void tearDown() throws Exception {
-      // Uninitialise test Fixtures
+      // Uninitialised test Fixtures
    }
 
    @Test
    public void testAddTask() {
-      fail("Not implemented yet");
+	   todolist.addTask(task);
+	      assertTrue(todolist.getAllTasks().contains(task));
    }
 
    @Test
