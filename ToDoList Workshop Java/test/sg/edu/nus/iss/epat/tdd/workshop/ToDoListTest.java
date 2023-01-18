@@ -1,5 +1,7 @@
 package sg.edu.nus.iss.epat.tdd.workshop;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +46,11 @@ public class ToDoListTest extends TestCase {
 
 	@Test
 	public void testGetStatus() {
-		fail("Not implemented yet");
+		// fail("Not implemented yet");
+		todolist.addTask(task);
+		assertEquals(false, todolist.getStatus("Desc 1"));
+		todolist.completeTask("Desc 1");
+		assertEquals(true, todolist.getStatus("Desc 1"));
 	}
 
 	@Test
