@@ -1,10 +1,8 @@
 package sg.edu.nus.iss.epat.tdd.workshop;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import org.junit.After;
@@ -42,6 +40,7 @@ public class ToDoListTest extends TestCase {
 	public void testAddTask() {
 		todolist.addTask(task);
 		assertTrue(todolist.getAllTasks().contains(task));
+		assertEquals(task, todolist.getTask("Desc 1"));
 	}
 
 	@Test
@@ -67,6 +66,8 @@ public class ToDoListTest extends TestCase {
 		todolist.addTask(task2);
 		todolist.removeTask(task.getDescription());
 		assertFalse(todolist.getAllTasks().contains(task));
+		assertNull(todolist.getTask("Desc 1"));
+		assertEquals(task2, todolist.getTask("Desc 2"));
 
 	}
 
