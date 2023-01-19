@@ -18,10 +18,13 @@ public class ToDoList {
 		}
 	}
 
-	public boolean getStatus(String description) {
+	public boolean getStatus(String description, String done) {
 		Task task = null;
 		if ((task = tasks.get(description)) != null) {
-			return task.isComplete();
+			if (done == "Done") {
+				return task.isComplete() == true;
+			}
+			return false;
 		}
 
 		return false;
