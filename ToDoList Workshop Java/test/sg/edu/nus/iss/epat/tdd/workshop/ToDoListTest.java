@@ -50,16 +50,16 @@ public class ToDoListTest extends TestCase {
 	@Test
 	public void testGetStatus() {
 		todolist.addTask(task);
-		assertEquals(false, todolist.getStatus(("Desc 1"), "Done"));
+		assertFalse(todolist.getStatus(("Desc 1"), "Done"));
 		todolist.completeTask("Desc 1");
-		assertEquals(true, todolist.getStatus(("Desc 1"), "Done"));
+		assertTrue(todolist.getStatus(("Desc 1"), "Done"));
 	}
 
 	@Test
 	public void testCompleteTask() {
 		todolist.addTask(task);
 		todolist.completeTask("Desc 1");
-		assertEquals(true, todolist.getStatus(("Desc 1"), "Done"));
+		assertTrue(todolist.getStatus(("Desc 1"), "Done"));
 	}
 
 	@Test
